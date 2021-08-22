@@ -1,0 +1,7 @@
+#ifndef F68118AE_FB66_41E4_9CD0_27D130E4E663
+#define F68118AE_FB66_41E4_9CD0_27D130E4E663
+
+int factorial(int num);
+static const int numb = 6;
+
+#endif /* F68118AE_FB66_41E4_9CD0_27D130E4E663 */

@@ -3,40 +3,41 @@
 #include<string>
 using namespace std;
 
-class CExample
+class example
 {
-    int m_nTest;
+    int Test;
 public:
-    CExample(int x):m_nTest(x) //带参数构造函数
+    example(int x):Test(x) //带参数构造函数
     {
-        cout << "constructor with argument\n";
+        cout << "constructor\n";
     }
 
-    CExample(const CExample & ex) //拷贝构造函数
+    example(const example & ex) //拷贝构造函数
     {
-        m_nTest = ex.m_nTest;
+        Test = ex.Test;
         cout << "copy constructor\n";
     }
 
-    CExample& operator = (const CExample &ex)//赋值函数(赋值运算符重载)
+    example &operator = (const example &ex)//赋值函数(赋值运算符重载) 返回该类的引用
     {
-        cout << "assignment operator\n";
-        m_nTest = ex.m_nTest;
-        return *this;
+        cout << "= operator\n";
+        Test = ex.Test;
+        return *this;                    //解引用，将返回的是exaple类型的类
     }
 
-    void myTestFunc(CExample ex)
+    void Func(example ex)
     {
+
     }
 };
 
 int main()
 {
-    CExample aaa(2);
-    CExample bbb(3);
-    bbb = aaa;
-    CExample ccc = aaa;
-    bbb.myTestFunc(aaa);
+    example a(2);
+    example b(3);
+    b = a;
+    example c = a;
+    b.Func(a);
 
     return 0;
 }

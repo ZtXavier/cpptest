@@ -6,7 +6,7 @@ class person
 {
     public:
         person(std::string name);
-        virtual ~person();
+        ~person();
         void sleep();
         virtual void eat();
     protected:

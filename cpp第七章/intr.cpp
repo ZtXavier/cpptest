@@ -71,7 +71,7 @@ doubwm::doubwm(std::string name,std::string work,std::string love) : men(name,wo
 
 void doubwm::introduct()
 {
-    std::cout << "大家好，我是" << /* women::name */ name << ",我是" << work << "的,并且我的爱好是" << love << std::endl;  //注意，多继承重名的要（1）指明继承的父类，狗则会出现二异性（2）用虚继承的方法
+    std::cout << "大家好，我是" << /* women::name */ name << ",我是" << work << "的,并且我的爱好是" << love << std::endl;  //注意，多继承重名的要（1）指明继承的父类，否则会出现二异性（2）用虚继承的方法
 }
 int main(void)
 {
