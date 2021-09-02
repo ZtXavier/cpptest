@@ -1,0 +1,43 @@
+#ifndef CH6_H_INCLUDE
+#define CH6_H_INCLUDE
+#include<iostream>
+#include<string>
+
+    // struct Sales_data
+    // {
+    //     std::string bookNo;
+    //     std::string isbn() const {return bookNo;}
+    //     Sales_data& Combine(const Sales_data&);
+    //     double avg_price() const;
+    //     double revenue = 0.0;
+    //     unsigned units_sold = 0;
+    // };
+
+    // std::istream& read(std::istream &,Sales_data &);
+    // std::ostream& print(std::ostream &,Sales_data &);
+    // void add_data(Sales_data &,Sales_data &);
+
+class Sales_data
+{
+    public:
+    Sales_data() = default;
+    Sales_data(const std::string &s,unsigned n,double p):bookNo(s),units_sold(n),revenue(p*n){}
+    Sales_data(const std::string &s):bookNo(s){}
+    Sales_data(std::istream&);
+    std::string isbn() const {return bookNo;}
+    Sales_data &Combine(const Sales_data &);
+    friend std::istream& read(std::istream &,Sales_data &);
+    friend std::ostream& print(std::ostream &,Sales_data &);
+    friend void add_data(Sales_data &,Sales_data &);
+
+    private:
+    double avg_price() const
+    { return units_sold ? revenue/units_sold : 0;}
+    std::string bookNo;
+    unsigned units_sold = 0;
+    double revenue = 0.0;
+};
+
+
+
+#endif
