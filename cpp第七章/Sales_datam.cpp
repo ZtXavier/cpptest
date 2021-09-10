@@ -4,7 +4,7 @@
 #include<vector>
 #include"Sales_data.h"
 
-int main(void)
+int main(int argc,char *argv[])
 {
     std::cout << "请输入交易记录(ISBN,售出总数，售出价格)" << std::endl;
     Sales_data total;
