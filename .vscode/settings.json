@@ -63,6 +63,7 @@
         "cinttypes": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "string.h": "c"
+        "string.h": "c",
+        "iomanip": "cpp"
     }
 }
