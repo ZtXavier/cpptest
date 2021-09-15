@@ -94,7 +94,7 @@ list list_operation(list head1,list head2)
         {
             p = (list)malloc(sizeof(in));
             p ->num = l ->num;
-            s->next = p;
+            s->next = p; 
             s = p;
             p = (list)malloc(sizeof(in));
             p->num = q->num;

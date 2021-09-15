@@ -19,7 +19,7 @@ list_nums list_init(list_nums head)                       //创建有头结点�
     p = head;
     std::cout << "请输入你要创建的项数" << std::endl;
     std::cin >> num;
-    for(int i = 0;i < num;i++)
+    for(int i = 1;i <= num;i++)
     {
         s = (list_nums)malloc(sizeof(nums));
         std::cout << "请输入第" << i << "项的项数" << std::endl;
@@ -234,30 +234,23 @@ int main(void)
     res = NULL;
 
     head1 = list_init(head1);
-    std::cout << "第一个多项式为:" << std::endl;
+    head2 = list_init(head2);
+
+    std::cout << "pa = ";
     printlist(head1);
     std::cout << std::endl;
 
-    head2 = list_init(head2);
-    std::cout << "第二个多项式为:" << std::endl;
+    std::cout << "pb = ";
     printlist(head2);
     std::cout << std::endl;
 
-    std::cout << "请选择你的功能 1(相加) 2(相减)" << std::endl;
-    std::cin >> i;
-    if(i == 1)
-    {
-        res = listadd(head1,head2);
-        printlist(res);
-    }
-    else if(i == 2)
-    {
-        res = listreduce(head1,head2);
-        printlist(res);
-    }
-    else
-    {
-        std::cout << "md好好输入^-^" << std::endl;
-    }
+    res = listadd(head1,head2);
+    std::cout << "pa + pb = ";
+    printlist(res);
+    std::cout << std::endl;
+    res = listreduce(head1,head2);
+    std::cout << "pa - pb = ";
+    printlist(res);
+    std::cout << std::endl;
     return 0;
 }
