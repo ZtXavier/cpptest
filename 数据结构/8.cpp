@@ -64,22 +64,40 @@ list listoperation(list head1,list head2,n info)
     int j = info.j;
     int len = info.len;
 
-    list head,tail,p,s,l,q;
+    list head,tail,p,s,l,q;                               //头结点特殊处理
     p = head1;
-    for(int k = 0;k < i - 1;k++)
+    if(i == 0)
     {
-        p = p->next;
+        head = s = head1;
+        for(int k = 0;k < len-1;k++)
+        {
+            s = s->next;
+        }
+        head1 = s->next;
+        s->next = NULL;
     }
-    s = p->next;
-    head = p->next;
-    for(int k = 0;k < len-1;k++)
-    {
-        s = s->next;
+    else{
+        for(int k = 0;k < i - 1;k++)
+        {
+            p = p->next;
+        }
+        s = p->next;
+        head = p->next;
+        for(int k = 0;k < len-1;k++)
+        {
+            s = s->next;
+        }
+        p->next = s->next;
+        s->next = NULL;
     }
-    p->next = s->next;
-    s->next = NULL;
 
     l = head2;
+    if(j == 0)
+    {
+        s->next = head2;
+        free(head1);
+        return head;
+    }
     for(int k = 0;k < j-1;k++)
     {
         l = l->next;

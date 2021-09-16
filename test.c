@@ -19,14 +19,18 @@ int main(int argc, char **argv){
     // int num = 0x40414041;
     // char *b =(char*)&num;
     // printf("%c %c\n",*b,*(b+1));
-    int i = 5;
-    int a = 10;
-    int *p ;
-    p = &a;
-    int *j ;
-    j = &i;
-    printf("%d %d\n",*j,*p);
-    compare_(&j,&p);
-    printf("%d %d\n",*j,*p);
+
+    // int i = 5;
+    // int a = 10;
+    // int *p ;
+    // p = &a;
+    // int *j ;
+    // j = &i;
+    // printf("%d %d\n",*j,*p);
+    // compare_(&j,&p);
+    // printf("%d %d\n",*j,*p);
+    int *p = NULL;                 //0~255编号是系统占用的不可访问
+    *p = 2;
+    printf("%d",*p);
     return 0;
 }
