@@ -1,10 +1,10 @@
 {
     "files.associations": {
+        "cctype": "cpp",
         "array": "cpp",
         "atomic": "cpp",
         "bit": "cpp",
         "*.tcc": "cpp",
-        "cctype": "cpp",
         "chrono": "cpp",
         "clocale": "cpp",
         "cmath": "cpp",
@@ -46,6 +46,7 @@
         "fstream": "cpp",
         "future": "cpp",
         "initializer_list": "cpp",
+        "iomanip": "cpp",
         "iosfwd": "cpp",
         "iostream": "cpp",
         "istream": "cpp",
@@ -62,9 +63,6 @@
         "thread": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp",
-        "variant": "cpp",
-        "string.h": "c",
-        "iomanip": "cpp"
+        "variant": "cpp"
     }
-
 }

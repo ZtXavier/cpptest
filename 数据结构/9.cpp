@@ -58,6 +58,7 @@ list list_operation(list head1,list head2)
 {
     int m,n;
     list head3,p,s,q,l,k;
+    list tmp;
     head3 = (list)malloc(sizeof(in));
     p = s = head3;
     q = head1;
@@ -65,8 +66,12 @@ list list_operation(list head1,list head2)
     head3->next = NULL;
     m = listnums(head1);
     n = listnums(head2);
-    if(m > n)
+    if(m <=  n)
     {
+        tmp = q;
+        q = l;
+        l = tmp;
+    }
         while(q != NULL && l != NULL)
         {
             p = (list)malloc(sizeof(in));
@@ -86,30 +91,6 @@ list list_operation(list head1,list head2)
         k->next = NULL;
         free(head1);
         free(head2);
-
-    }
-    else
-    {
-        while(q != NULL && l != NULL)
-        {
-            p = (list)malloc(sizeof(in));
-            p ->num = l ->num;
-            s->next = p; 
-            s = p;
-            p = (list)malloc(sizeof(in));
-            p->num = q->num;
-            s->next = p;
-            s = p;
-            p->next = NULL;
-            q = q->next;
-            k = l;
-            l = l->next;
-        }
-        p->next = l;
-        k->next = NULL;
-        free(head1);
-        free(head2);
-    }
     return head3->next;
 }
 
