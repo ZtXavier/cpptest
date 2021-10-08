@@ -86,6 +86,10 @@ double caltion::resultnum(std::string &in)
             }
             if(in[i] == '(')
             {
+                if(in[i - 1] >= '0' && in[i -1] <= '9')
+                {
+                    this->sign[++(this->top2)] = '*';
+                }
                 this->sign[++(this->top2)] = in[i];
             }
             else if((in[i] == '*' || in[i] == '/') && (sign[this->top2] == '+' || sign[this->top2] == '-' || sign[this->top2] == '(' || this->top2 == -1))
