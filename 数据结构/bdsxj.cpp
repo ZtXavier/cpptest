@@ -200,18 +200,19 @@ int caltion::priority(char s)
     }
     else
     {
-        return 0;
+        return 1;
     }
 }
 
 char *caltion::frontres(std::string &in)    //中缀转后缀
 {
-    char ch[MAX];
+    char ch[MAX];  //设置一个辅助栈来进行暂存
     char *res;
     res = (char*)malloc(sizeof(char)*MAX);
     int top1,top2;
     top1 = top2 = -1;
-    for(int i = 0;i < in.size();i++)
+    int flag = 1;
+    for(int i = 0;i < in.size();)
     {
         if(in[i] >= '0' && in[i] <= '9')
         {
@@ -226,10 +227,12 @@ char *caltion::frontres(std::string &in)    //中缀转后缀
             if(top2 == -1 || ch[top2] == '(' || priority(in[i]) > priority(ch[top2]))
             {
                 ch[++top2] = in[i];
+                flag = 1;
             }
             else
             {
                 res[++top1] = ch[top2--];
+                flag = 0;
             }
         }
         else if(in[i] == ')')
@@ -240,6 +243,9 @@ char *caltion::frontres(std::string &in)    //中缀转后缀
             }
             top2--;
         }
+        if(flag == 0)
+        continue;
+        i++;
     }
     while(top2 != -1)
     {
