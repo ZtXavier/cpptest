@@ -4,6 +4,7 @@
 #include<vector>
 #include<string>
 #include<queue>
+#include<ctime>
 
 
 typedef struct position
@@ -21,8 +22,8 @@ int book[12][12];
 
 void my_init(int x,int y)
 {
-    std::default_random_engine e;
-    std::uniform_int_distribution<unsigned> u(1,10);
+    std::default_random_engine e(time(0));                //这里改用为c11的随机数引擎，而每次要生成随机数的话需要引用time函数来计算每次系统调用的时间
+    std::uniform_int_distribution<unsigned> u(1,10);      //这里来进行随机数范围的控制
 
     for(int i = 0;i < 12;i++)
     {
