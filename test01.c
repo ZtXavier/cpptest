@@ -1,5 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
+
+#define func(x)                     \
+    if(!x)                          \
+    printf("%d",x);                 \
 
 
 // typedef struct info
@@ -150,9 +155,14 @@
 
 
 
+
+
 int main()
 {
-    int i = 16;
-    printf("%d",-1%i);
+    int x = 0;
+    func(x);
+    char ch = 'A';
+    int w = 6;
+    printf("%*d",w,ch);
     return 0;
 }

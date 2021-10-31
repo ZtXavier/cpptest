@@ -65,7 +65,8 @@
         "variant": "cpp",
         "string.h": "c",
         "iomanip": "cpp",
-        "forward_list": "cpp"
+        "forward_list": "cpp",
+        "cfenv": "cpp"
     }
 
 }
