@@ -72,51 +72,66 @@
 
 int main()
 {
-    int m,p,n;
-    scanf("%d",&m);
-    scanf("%d",&p);
-    scanf("%d",&n);
-    int a[m][p];
-    int b[p][n];
-    for(int i = 0;i < m;i++)
-    {
-        for(int j = 0;j < p;j++)
-        {
-            scanf("%d",&a[i][j]);
-        }
-    }
-    for(int i = 0;i < p;i++)
-    {
-        for(int j = 0;j < n;j++)
-        {
-            scanf("%d",&b[i][j]);
-        }
-    }
-    int k = 0,h = 0;
-    int res[m][n];
-    memset(res,0,sizeof(res));
-    for(int i = 0;i < m;i++)
-    {
-        for(int j = 0;j < n;j++)
-        {
-            for(int l = 0;l < p;l++)
-            {
-                res[h][k] += (a[i][l]*b[l][j]);
-            }
-            k++;
-        }
-        k = 0;
-        h++;
-    }
-    for(int i = 0;i < m;i++)
-    {
-        for(int j = 0;j < n;j++)
-        {
-            if(j == n-1)
-            printf("%d\n",res[i][j]);
-            else
-            printf("%d ",res[i][j]);
-        }
-    }
-    return 0;
+    // int m,p,n;
+    // scanf("%d",&m);
+    // scanf("%d",&p);
+    // scanf("%d",&n);
+    // int a[m][p];
+    // int b[p][n];
+    // for(int i = 0;i < m;i++)
+    // {
+    //     for(int j = 0;j < p;j++)
+    //     {
+    //         scanf("%d",&a[i][j]);
+    //     }
+    // }
+    // for(int i = 0;i < p;i++)
+    // {
+    //     for(int j = 0;j < n;j++)
+    //     {
+    //         scanf("%d",&b[i][j]);
+    //     }
+    // }
+    // int k = 0,h = 0;
+    // int res[m][n];
+    // memset(res,0,sizeof(res));
+    // for(int i = 0;i < m;i++)
+    // {
+    //     for(int j = 0;j < n;j++)
+    //     {
+    //         for(int l = 0;l < p;l++)
+    //         {
+    //             res[h][k] += (a[i][l]*b[l][j]);
+    //         }
+    //         k++;
+    //     }
+    //     k = 0;
+    //     h++;
+    // }
+    // for(int i = 0;i < m;i++)
+    // {
+    //     for(int j = 0;j < n;j++)
+    //     {
+    //         if(j == n-1)
+    //         printf("%d\n",res[i][j]);
+    //         else
+    //         printf("%d ",res[i][j]);
+    //     }
+    // }
+    // return 0;
+
+
+
+    // char a[10];
+    // int num;
+    // scanf("%s",a);
+    // scanf("%d",&num);
+    // int len = strlen(a);
+    // for(int i = 0;i < strlen(a);i++)
+    // {
+    //     a[i] = a[i] + num%32;
+    // }
+    // for(int i = 0;i < len;i++)
+    // printf("%c",a[i]);
+    // return 0;
 }
