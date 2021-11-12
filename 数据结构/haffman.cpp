@@ -129,7 +129,7 @@ void writecodehuffman(hufcode code[],Haffmantree tree)
             {
                 for(int k = code[j].start;k < N;k++)
                 {
-                    std::cout << code[j].bs[k];
+                    // std::cout << code[j].bs[k];         //验证
                     hufmancode[n] = code[j].bs[k];
                     n++;
                 }
@@ -177,11 +177,11 @@ void printtree(Haffmantree tree)
 
 void printcode(hufcode code[])
 {
-    printf("根据哈夫曼树对字符建立的编码为:\n");
-    printf("\t字符序号\t字符名称\t字符编码\n");
+    // printf("根据哈夫曼树对字符建立的编码为:\n");
+    // printf("\t字符序号\t字符名称\t字符编码\n");
     for(int i = 1;i <= N;i++)
     {
-        printf("\t%d\t%c",i,code[i].ch);
+        printf("\t%d\t%c\t",i,code[i].ch);
         for(int j = code[i].start;j < N;j++)
         {
             printf("%c",code[i].bs[j]);
@@ -195,7 +195,7 @@ int main()
     FILE *fp1,*fp2;
     char buffer[1000];
     creattreehuffman(tree);
-    printtree(tree);
+    // printtree(tree);
     creatcodehuffman(code,tree);
     printcode(code);
     writecodehuffman(code,tree);
@@ -205,9 +205,10 @@ int main()
         exit(0);
     }
     fprintf(fp1,"文件编码为:%s",hufmancode);
-    printf("codefile文件中代码如下:\n");
-    printf("哈夫曼编码为：%s",hufmancode);
+    // printf("codefile文件中代码如下:\n");
+    printf("哈夫曼编码为：%s\n",hufmancode);
     printf("code文件中译码为: ");
     transcodehuffman(code,tree,hufmancode);
+    printf("\n");
     return 0;
 }
