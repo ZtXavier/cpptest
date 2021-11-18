@@ -164,16 +164,16 @@ void transcodehuffman(hufcode code[],Haffmantree tree,char s[])
     std::cout << std::endl;
 }
 
-void printtree(Haffmantree tree)
-{
-    std::cout << "根据字符的使用概率所建立的树为:\n";
-    printf("\t字符序号\t字符名称\t字符频率\t双亲位置\t左孩子\t右孩子\n");
-    for(int i = 1;i < MAX;i++)
-    {
-        printf("\t %d \t %c \t",i,tree[i].name);
-        printf("%d\t%d\t%d\t%d\n",tree[i].weight,tree[i].parent,tree[i].Lchild,tree[i].Rchild);
-    }
-}
+// void printtree(Haffmantree tree)
+// {
+//     std::cout << "根据字符的使用概率所建立的树为:\n";
+//     printf("\t字符序号\t字符名称\t字符频率\t双亲位置\t左孩子\t右孩子\n");
+//     for(int i = 1;i < MAX;i++)
+//     {
+//         printf("\t %d \t %c \t",i,tree[i].name);
+//         printf("%d\t%d\t%d\t%d\n",tree[i].weight,tree[i].parent,tree[i].Lchild,tree[i].Rchild);
+//     }
+// }
 
 void printcode(hufcode code[])
 {
