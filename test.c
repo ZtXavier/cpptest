@@ -1,13 +1,27 @@
 #include <stdio.h>
 #include<string.h>
 #include<stdlib.h>
+// #include<assert.h>
+#include"my_assert.h"
 
-#define Swap1(a,b,c)    \
-do{                     \
-    c = a;              \
-    a = b;              \
-    b = c;              \
-}while(0)               \
+
+
+
+
+
+
+
+
+
+
+
+
+// #define Swap1(a,b,c)    \
+// do{                     \
+//     c = a;              \
+//     a = b;              \
+//     b = c;              \
+// }while(0)              \
 
 
 
@@ -50,9 +64,21 @@ do{                     \
 
 int main(int argc, char **argv)
 {
-    int a = 5;
-    int b = 3;
-    int c = 2;
+
+
+    FILE *fp;
+    fp = fopen("正则.txt","w");
+    assert( fp );
+    fclose(fp);
+
+    FILE *fp2;
+    fp2 = fopen("adaw.txt","r"); //只读打开不存在的文件会报错
+    assert(fp2);
+    fclose(fp2);
+
+    // int a = 5;
+    // int b = 3;
+    // int c = 2;
     // int num = 0x40414041;
     // char *b =(char*)&num;
     // printf("%c %c\n",*b,*(b+1));
@@ -72,7 +98,7 @@ int main(int argc, char **argv)
     // *func1() = 4;
     // *func2() = 5;
     // *func3() = 6;
-    Swap1(a,b,c);
-    printf("%d %d",a,b);
+    // Swap1(a,b,c);
+    // printf("%d %d",a,b);
     return 0;
 }
