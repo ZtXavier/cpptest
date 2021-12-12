@@ -68,7 +68,8 @@
     "forward_list": "cpp",
     "cfenv": "cpp",
     "assert.h": "c",
-    "my_assert.h": "c"
+    "my_assert.h": "c",
+    "wchar.h": "c"
   },
   "C_Cpp_Runner.cCompilerPath": "/usr/bin/gcc",
   "C_Cpp_Runner.cppCompilerPath": "/usr/bin/g++",
