@@ -23,7 +23,7 @@ void *getch(void *ch)
 	*sch = getchar();
 	while(getchar() != '\n')
 		continue;
-	if(*sch != 'a' || *sch != 'b' || *sch != 'w'|| *sch != 's')
+	if(*sch != 'a' || *sch != 'd' || *sch != 'w'|| *sch != 's')
 		sch = NULL;
 	return sch;
 }
@@ -200,7 +200,8 @@ int main(int argc,char *argv[])
 		pthread_create(&th,NULL,getch,a);
 		if(a == NULL)
 			*a = al;
-		usleep(100000);
+		// usleep(100000);
+		sleep(1);
 		if(*a == 'a' && al != 'd' || *a == 'd' && al != 'a' ||
 				*a == 'w' && al != 's' || *a == 's' && al != 'w' || *a == 'q')
 		{
