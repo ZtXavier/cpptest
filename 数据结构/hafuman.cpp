@@ -252,8 +252,8 @@ void ui_hfm()
     printf("\t\t            4.打印哈夫曼树                                \n");
     printf("\t\t            5.打印元素的哈夫曼编码                    \n");
     printf("\t\t            6.开始编码                                      \n");
-    printf("\t\t            7.读取已完成译码的文件                    \n");
-    printf("\t\t            8.开始译码                                      \n");
+    printf("\t\t            7.开始译码                                      \n");
+    printf("\t\t            8.读取已完成译码的文件                    \n");
     printf("\t\t            9.退出程序                                      \n");
     printf("\t\t********************************************************\n");
     int step;
@@ -330,7 +330,7 @@ void ui_hfm()
                 system("clear");
                 flag = 0;
                 break;
-        case 7:
+        case 8:
                 // bzero(hufmancode,sizeof(hufmancode));
                 FILE *fp3;
                 if((fp3 = fopen("codefile.txt","r")) == NULL)
@@ -347,7 +347,7 @@ void ui_hfm()
                 printf("codefile文件中代码如下:\n");
                 std::cout << hufmancode << std::endl;
                 break;
-        case 8:
+        case 7:
                  int ret;
                 printf("哈夫曼编码为：%s\n",hufmancode);
                 printf("开始译码...\n");
