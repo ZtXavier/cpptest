@@ -1,6 +1,17 @@
 #include<iostream>
 #include<cctype>
 using namespace std;
+
+// int op(int a,int b)
+// {
+//     return 0;
+// }
+// float op(double a,int b)
+// {
+//     return 0.0;
+// }
+
+
 int main(void){
     int row;
     cout << "请输入行数: ";
