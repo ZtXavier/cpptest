@@ -1,6 +1,9 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
+#include<unistd.h>
+#include<sys/types.h>
+
 
 // //查看一个函数的地址，用到函数指针 数据类型 (*自定义符号)(形参)
 
@@ -134,6 +137,30 @@ int main()
     // for(int i = 0;i < len;i++)
     // printf("%c",a[i]);
     // return 0;
+
+
+    // int i = 0;
+    // pid_t pid;
+    // printf("%d\n",(int)getpid());
+    // pid = fork();
+    // for(int j = 0;j < 4;j++)
+    // {
+    // if (pid > 0)
+    // printf("%d %d\n",(int)getpid(),i += 2);
+    // else if(pid == 0)
+    // printf("child %d %d\n ",(int)getpid(),i++);
+    
+    int n;
+    int num = 0;
+    char st[15];
+    scanf("%s",st);
+    for(int i = 0;i < 15;i++)
+    {
+        num += st[i];
+    }
+    printf("%d",num);
+    return 0;
 }
+   
 
 
