@@ -104,7 +104,6 @@ int BeginGo::ChoiceMode()
 
 void BeginGo::Compstep(P &p ,const char fg)
 {
-    printChessBoard();
     int x = 0;
     int y = 0;
     while(1)
@@ -187,6 +186,7 @@ void BeginGo::Begin()
                     break;
                 }
             }
+            system("clear");
         }
         cout << "play again ?" << endl;
         cout << "yes or no" << endl;
@@ -251,7 +251,7 @@ int BeginGo::JudgeWin(P &p,const char fg)
             return 1;
         }
     }
-    
+
     len = (p.row - 1) > (S - p.col) ? S - p.col : p.row - 1;
     if(len > 4)
     {
