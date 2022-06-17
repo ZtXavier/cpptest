@@ -1,18 +1,47 @@
+
+// #include<stdlib.h>
+// // #include<assert.h>
+// #include"my_assert.h"
+
+
+// int main()
+// {
+//     char ch[] = "dafedaw\x32";
+//     for(int i = 0;i < strlen(ch);i++)
+//     printf("%c",ch[i]);
+//     return 0;
+// }
 #include <stdio.h>
 #include<string.h>
-#include<stdlib.h>
-// #include<assert.h>
-#include"my_assert.h"
-
 
 int main()
 {
-    char ch[] = "dafedaw\x32";
-    for(int i = 0;i < strlen(ch);i++)
-    printf("%c",ch[i]);
+    int j,i;
+    char ch[11];
+    printf("input 10 char!\n");
+    for( i = 0;i < 10;i++)
+    {
+        scanf("%c",&ch[i]);
+        getchar();
+    }
+    for( i = 0;i < 10;i++)
+    {
+        for( j = 0;j < 10 - i -1;j++)
+        {
+            if(ch[j] > ch[j+1])
+            {
+                char tmp = ch[j];
+                ch[j] = ch[j+1];
+                ch[j+1] = tmp;
+
+            }
+        }
+    }
+    ch[10] = '\0';
+   
+    printf("\n%s",ch);
     return 0;
 }
-
 
 
 
