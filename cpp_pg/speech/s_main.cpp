@@ -5,7 +5,11 @@
 int main()
 {
     Speech sp;
-    int choice;
+    for(std::map<int,Speaker>::iterator it = sp.m_speaker.begin();it != sp.m_speaker.end();++it)
+    {
+            std::cout << "选手编号:"  << it->first << "姓名:" << it->second.s_name << "分数:" << it->second.m_score[0] << std::endl;
+    }
+    int choice = 0;
     while(true)
     {
         sp.show_Menu();
@@ -14,25 +18,26 @@ int main()
 
         switch(choice)
         {
-            case 1: 
+                case 1: 
+                sp.complete_begin();
 
-                    break;
+        break;
 
-            case 2:
+                case 2:
 
-                    break;
+        break;
 
-            case 3:
+                case 3:
 
-                    break;
+        break;
                
-            case 0:
-                    sp.exit_Menu();
-                    return 0;
+                case 0:
+                        sp.exit_Menu();
+                        return 0;
 
-            default:
-                    std::cout << "请重新选择:" << std::endl;
-                    break;
+                default:
+                        std::cout << "请重新选择:" << std::endl;
+        break;
         }
     }
     return 0;

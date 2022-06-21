@@ -18,7 +18,9 @@ class Speech
 
         void exit_Menu();
 
-        void compete_begin();
+        void SpeechDraw(); // 抽签
+
+        void complete_begin();
 
         void Speech_create();
 
