@@ -66,3 +66,7 @@ Square *s = &Rect;
 cout << s->GetArea() << endl;
 return 0; 
 } 
+
+
+
+
