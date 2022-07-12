@@ -1,4 +1,6 @@
 #include <cstdio>
+#include<iostream>
+#include<string>
 #include <memory>
 #include <thread>
 #include <utility>
@@ -19,8 +21,25 @@ void ThreadMain(std::shared_ptr<Test> x) {
   //
   printf("Nothing");
 }
+
+
 int main() {
   auto t = Test::create();
   auto t1 = std::thread(ThreadMain, t);
   t1.detach();
 }
+
+// int main()
+// { 
+//     std::string s;
+//     for(;;)
+//     {
+//         char ch = getchar();
+//         if(ch == EOF)
+//         {
+//             break;
+//         }
+//         s.push_back(ch);
+//     }
+//     return 0;
+// }
