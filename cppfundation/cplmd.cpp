@@ -1,13 +1,11 @@
 #include<iostream>
 #include<string>
-#include<functional>
-using foo = void(*)(int);
 
-void func(foo f)
+using foo = void(int);
+
+void functional(foo f)
 {
-    // f(3);
-    std::cout << f << std::endl;
-    
+    f(3);            // 这里相当于传进来一个函数表达式作为函数的形参
 }
 
 int main()
@@ -16,11 +14,7 @@ int main()
     {
         std::cout << value << std::endl;
     };
-    
-    func(f);
-
-    // f(2);
-    // f(1);
-    
+    functional(f);
+    f(1);
     return 0;
 }
