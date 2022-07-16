@@ -22,7 +22,7 @@ int main()
     // 这里的解决方法就是使用weak_ptr
     auto a = std::make_shared<A>();
     auto b = std::make_shared<B>();
-    a.pointer = b;
-    b.pointer = a;
+    // a.pointer = b;
+    // b.pointer = a;
     return 0;
 }

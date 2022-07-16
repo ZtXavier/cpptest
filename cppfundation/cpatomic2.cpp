@@ -18,7 +18,7 @@ struct A
 
 int main()
 {
-    std::atomic<A> a;
+    std::atomic<int> a;
     std::cout << std::boolalpha << a.is_lock_free() << std::endl;
     return 0;
 }

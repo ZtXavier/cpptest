@@ -76,8 +76,8 @@ int main()
     std::cout << std::get<2>(t) << std::endl;
     std::cout << std::get<3>(t) << std::endl;
     // 如何解决这种传参过程与运行时赋值冲突的问题
-    int indx = 2;
-    std::cout << std::get<indx>(t) << std::endl;
+    // int indx = 2;
+    // std::cout << std::get<indx>(t) << std::endl;
 
 
 
