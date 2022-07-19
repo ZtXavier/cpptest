@@ -93,7 +93,8 @@
     "strstream": "cpp",
     "expected": "cpp",
     "spanstream": "cpp",
-    "stacktrace": "cpp"
+    "stacktrace": "cpp",
+    "*.inc": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "/usr/bin/gcc",
   "C_Cpp_Runner.cppCompilerPath": "/usr/bin/g++",
