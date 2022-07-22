@@ -11,6 +11,8 @@
 #include<boost/noncopyable.hpp>
 
 typedef std::function<void(int )> EventCallback_;
+
+// Handler 处理回调函数,其中包括设置事件属性,读取缓冲区
 class Handler : boost::noncopyable
 {
     // friend class Acceptor;
@@ -50,6 +52,7 @@ class Handler : boost::noncopyable
         int len_;
 };
 
+// 用于接受内核发出的响应请求,然后放入到请求队列中
 class Acceptor :boost::noncopyable
 {
         typedef std::vector<epoll_event> EventList;
@@ -61,11 +64,12 @@ class Acceptor :boost::noncopyable
         std::vector<Handler*> poll();
         static const int event_size = 16;
         private:
-            std::vector<Handler*> fillActivechannels(int);
             int epfd_;
+            std::vector<Handler*> fillActivechannels(int);
             EventList activeEventlist_;
 };
 
+// 主要进行一个调度分配工作
 class Reactor
 {
     public:

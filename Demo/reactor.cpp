@@ -21,6 +21,7 @@ void Reactor::loop()
         {
             for(int i = 0;i < activeEventPtrList.size();i++)
             {
+                // 在这里进行回调处理函数
                 activeEventPtrList[i]->handlerEvent();
             }
         }

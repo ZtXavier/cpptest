@@ -41,7 +41,7 @@ class EchoServer
             auto handlerPtr = std::make_shared<Handler>(skfd);
             handlerlist_[skfd] = handlerPtr;
             int reuse = 1;
-            setsockopt(skfd,SOL_SOCKET,SO_REUSEADDR,&reuse,sizeof(reuse));
+            setsockopt(skfd,SOL_SOCKET,SO_REUSEPORT,&reuse,sizeof(reuse));
             sockaddr_in addr;
             bzero(&addr,sizeof(addr));
             addr.sin_family = AF_INET;
@@ -57,6 +57,7 @@ class EchoServer
             {
                 my_error("listen error");
             }
+            // 在此时accept套接字并链接
             handlerPtr->setReadCallback(std::bind(&EchoServer::acceptConn,this,_1));
             handlerPtr->enableRead();
             base_->registerHandler(handlerPtr.get());
