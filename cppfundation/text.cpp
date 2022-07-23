@@ -96,3 +96,53 @@
 //     return 0;
 // }
 
+#include<iostream>
+#include<functional>
+#include<thread>
+#include<unistd.h>
+class func
+{
+    public:
+        func():i(1),ch(nullptr)
+        {
+            ch = new char('a');
+        }
+        void in(int a)
+        {
+            sleep(5);
+            a = i;
+            *ch = 'p';
+            std::cout << "I changed ch" << std::endl;
+        }
+        void loop()
+        {
+            for(;;)
+            {
+                sleep(1);
+                std::cout << i <<  std::endl;
+                std::cout << *ch << std::endl;
+            }
+        }
+
+    private:
+        int i;
+        char *ch;
+};
+
+
+
+int main()
+{
+    func a;
+    std::function<void()> c = std::bind(&func::loop,&a);
+    std::function<void(int)> d = std::bind(&func::in,&a,std::placeholders::_1);
+    std::thread th1(c);
+    th1.detach();
+    std::thread th2(d,3);
+    th2.detach();
+    for(;;)
+    {
+
+    }
+    return 0;
+}
