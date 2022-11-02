@@ -11,6 +11,7 @@ class Maxqueue {
         elts.resize(cap + 1);
         n = 0;
     }
+
     void Insert(T &&a) {
         ++n;
         elts[n] = a;
@@ -44,6 +45,7 @@ class Maxqueue {
     int Size() {
         return n;
     }
+
     void Swap(int a, int b) {
         T tmp;
         tmp = elts[b];
@@ -74,7 +76,7 @@ class Maxqueue {
     void sink(int k) {
         while(Left(k) <= n) {
             int maxer = Left(k);
-            if(Right(k) <= n && less(maxer ,Right(k))) {
+            if(Right(k) <= n && less(maxer, Right(k))) {
                 maxer = Right(k);
             }
             if(less(maxer, k)) {
@@ -87,7 +89,7 @@ class Maxqueue {
 
     void Swim(int k) {
         while(k > 1 && less(Parent(k), k)) {
-            Swap(Parent(k),k);
+            Swap(Parent(k), k);
             k = Parent(k);
         }
     }

@@ -12,6 +12,9 @@ int main() {
     mq.Insert(2);
     mq.Insert(5);
     std::cout << mq.Size() << std::endl;
+    mq.Insert(100); 
+    std::cout << mq.Top() << std::endl;
+    mq.Pop();
     std::cout << mq.Top() << std::endl;
     
 
