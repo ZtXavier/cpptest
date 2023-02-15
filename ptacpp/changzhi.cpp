@@ -66,3 +66,19 @@ using namespace std;
 //     cout << endl;
 //     return 0;
 // }
+
+int main() {
+
+    int a;
+    std::cin >> a ;
+
+    if(a > 2 && a < 5 ) {
+        printf("true 1\n");
+    } else if( a > 2 && a < 6) {
+        printf("true 2\n");
+    } else {
+        printf("false\n");
+    }
+
+    return 0;
+}
