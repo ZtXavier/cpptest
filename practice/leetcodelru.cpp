@@ -66,7 +66,7 @@ class LRUCache {
     // 链表的添加和删除
     // 这里将最新的节点插入到后面
         void AddNode(ListNode *node) {
-            node->pre = tail->prev;
+            node->prev = tail->prev;
             node->prev->next = node;
             node->next = tail;
             tail->prev = node;
@@ -75,7 +75,7 @@ class LRUCache {
         void MoveToTail(ListNode *node) {
             node->prev->next = node->next;
             node->next->prev = node->prev;
-            node->pre = tail->prev;
+            node->prev = tail->prev;
             node->prev->next = node;
             node->next = tail;
             tail->prev = node;
